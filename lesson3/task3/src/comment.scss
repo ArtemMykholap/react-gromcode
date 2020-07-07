@@ -1,8 +1,4 @@
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
+
 
 .user-info {
     display: flex;
@@ -14,7 +10,6 @@
         font-weight: 700;
     }
 }
-
 .comment {
     &__text {
         margin: 8px 0;
