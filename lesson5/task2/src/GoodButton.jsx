@@ -1,9 +1,9 @@
 import React from 'react';
 
 class GoodButton extends React.Component{
-    handleClick(event){
+    handleClick(e){
 
-        alert(event.target.innerHTML)
+        alert(e.target.textContent)
     }
     render(){
         return( <button className="fancy-button"
@@ -13,6 +13,4 @@ class GoodButton extends React.Component{
     }
 
 }
-
-
  export default GoodButton
