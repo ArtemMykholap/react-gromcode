@@ -17,7 +17,7 @@ clickHandler=()=>{
         return(
             <div>
                 <button onClick={this.clickHandler}>
-                {this.state.button ? 'ON' : 'OFF'}
+                {this.state.button ? 'On' : 'Off'}
                 </button>
                 
             </div>
