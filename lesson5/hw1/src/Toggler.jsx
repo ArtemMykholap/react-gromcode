@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Toggler extends Component {
+class Toggler extends React.Component {
     constructor(props) {
         super(props);
          this.state = {
@@ -9,9 +9,9 @@ class Toggler extends Component {
       }
 
 
-clickHandler=()=>{
-    this.setState({button:!this.state.button})
-}
+    clickHandler=()=>{
+          this.setState({button:!this.state.button})
+        }
 
     render(){
         return(
@@ -24,7 +24,4 @@ clickHandler=()=>{
         )
     }
 }
-export default Toggler
-
-  
- 
+export default Toggler;
