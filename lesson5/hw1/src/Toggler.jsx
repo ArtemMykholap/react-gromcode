@@ -1,26 +1,25 @@
 import React, {Component} from 'react';
 
-
 class Toggler extends Component {
     constructor(props) {
         super(props);
-        this.state = {checkOn: false};
-        this.checkClick = this.checkClick.bind(this);
+         this.state = {
+            button:false
+          };
       }
 
-    checkClick() {
-        this.setState(checkOn => ({
-            checkClick: !checkOn.checkClick
-        }));
-      }
+
+clickHandler=()=>{
+    this.setState({button:!this.state.button})
+}
 
     render(){
         return(
             <div>
-                <button onClick={this.checkClick}>
-                    {this.state.checkClick ?
-                     'On' : 'Off'}
+                <button onClick={this.clickHandler}>
+                {this.state.button ? 'ON' : 'OFF'}
                 </button>
+                
             </div>
         )
     }
