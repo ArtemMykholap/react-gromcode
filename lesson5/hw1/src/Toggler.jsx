@@ -4,7 +4,7 @@ class Toggler extends Component {
     constructor(props) {
         super(props);
          this.state = {
-            button:false
+            button:true
           };
       }
 
@@ -17,7 +17,7 @@ clickHandler=()=>{
         return(
             <div>
                 <button onClick={this.clickHandler}>
-                {this.state.button ? 'On' : 'Off'}
+                {this.state.button ? 'Off' : 'On'}
                 </button>
                 
             </div>
