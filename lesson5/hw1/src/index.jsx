@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Toggler from './Toggler.jsx';
-import './index.scss';
+import './index.css';
 
 
 
