@@ -8,29 +8,29 @@ class Auth extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state ={
+        this.state = {
             isLoggedIn: false
         }
     }
     onLogin = () => {
         this.setState({
-        isLoggedIn: true,
+            isLoggedIn: true,
         })
     }
     onLogout = () => {
         this.setState({
-        isLoggedIn: false,
+            isLoggedIn: false,
         })
     }
 
     render() {
-        
+
         return (
             <div className="panel">
-            <Greeting isLoggedIn={this.state.isLoggedIn}/>
-            <div>   
-                    {this.state.isLoggedIn ? <Logout onLogout={this.onLogout}/>
-                    : <Login onLogin={this.onLogin}/>}   
+                <Greeting isLoggedIn={this.state.isLoggedIn} />
+                <div>
+                    {this.state.isLoggedIn ? <Logout onLogout={this.onLogout} />
+                        : <Login onLogin={this.onLogin} />}
                 </div>
             </div>
         )
