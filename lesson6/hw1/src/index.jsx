@@ -8,4 +8,4 @@ import './index.scss';
 
 const rootElement=document.querySelector('#root');
 
-ReactDOM.render(<Status status={true} />, rootElement)
+ReactDOM.render(<Status />, rootElement)
