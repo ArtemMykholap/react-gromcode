@@ -7,13 +7,14 @@ class Status extends React.Component {
         super(props);
 
         this.state = {
-            isOnline: false,
+            isOnline: props.isOnline,
         }
     }
- 
+
     connect = () => {
         this.setState({
-            isOnline:true,
+            isOnline: true,
+
         })
     }
 
@@ -22,8 +23,8 @@ class Status extends React.Component {
         return (
 
               this.state.isOnline? <Online/> : <Offline connect={()=>this.connect()}/>   
-        )
-
+         ) 
+       
     }
 }
 
