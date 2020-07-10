@@ -3,15 +3,12 @@
 import React, { Component } from 'react';
 import Transaction from './Transaction';
 
-class TransactionsList extends Component {
 
-    render() {
-        return (<ul className="transactions">
-            {this.props.transactions.map(operation =>
-                <Transaction key={operation.id} {...operation} />)}
-        </ul>)
-    }
+const TransactionsList=({transactions})=>{
+    return (<ul className="transactions">
+    {transactions.map(operation =>
+        <Transaction key={operation.id} {...operation} />)}
+</ul>)
 }
-
 
 export default TransactionsList
