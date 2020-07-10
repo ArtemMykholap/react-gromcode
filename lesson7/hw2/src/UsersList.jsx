@@ -47,7 +47,7 @@ class UsersList extends Component {
                 totalItems={users.length}/>
                 <ul className="users">
                     {usersToShow.map(user => (
-                        <User key={Math.random()}name={user.name} age={user.age} />
+                        <User key={Math.random()}{...users} />
                     ))
                     }
                 </ul>
