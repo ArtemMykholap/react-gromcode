@@ -4,22 +4,22 @@ import Pagination from './Pagination.jsx';
 
 class UsersList extends Component {
     state = {
-        currentPage:1 ,
+        currentPage: 1,
         itemsPerPage: 3
     }
 
 
-    goNext=()=>{
+    goNext = () => {
 
         this.setState({
-            currentPage: this.state.currentPage+1
+            currentPage: this.state.currentPage + 1
         })
 
     }
-    goPrev=()=>{
+    goPrev = () => {
 
         this.setState({
-            currentPage: this.state.currentPage-1
+            currentPage: this.state.currentPage - 1
         })
 
     }
@@ -41,13 +41,13 @@ class UsersList extends Component {
         return (
             <div>
                 <Pagination goNext={this.goNext}
-                goPrev={this.goPrev}
-                currentPage={currentPage+1}
-                itemsPerPage={itemsPerPage}
-                totalItems={users.length}/>
+                    goPrev={this.goPrev}
+                    currentPage={currentPage + 1}
+                    itemsPerPage={itemsPerPage}
+                    totalItems={users.length} />
                 <ul className="users">
                     {usersToShow.map(user => (
-                        <User key={Math.random()}{...users} />
+                        <User key={Math.random()} name={user.name} age={user.age} />
                     ))
                     }
                 </ul>
