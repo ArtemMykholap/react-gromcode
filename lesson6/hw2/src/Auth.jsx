@@ -39,8 +39,6 @@ class Auth extends Component {
 
     }
 
-
-
     render() {
 
         const { isLoggedIn, isProcessing } = this.state;
@@ -56,9 +54,6 @@ class Auth extends Component {
                 <Logout onLogout={this.logout} />)
         }
         return (<Login onLogin={this.login} />)
-
-
-
 
     }
 
