@@ -5,8 +5,8 @@ import React from 'react';
 // 3.isNextAval
 
 const Pagination = ({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) => {
-    const isPrevPageAvailable = currentPage > 1;
-    const isNextPageAvailable = totalItems - itemsPerPage * currentPage >= 0;
+    const isPrevPageAvailable = currentPage > 0;
+    const isNextPageAvailable = totalItems - itemsPerPage * (currentPage+1) >= 0;
 
     return (
 
@@ -16,7 +16,7 @@ const Pagination = ({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) =
             onClick={goPrev}>
                 {isPrevPageAvailable && '←'}
             </button>
-            <span className="pagination__page">{currentPage}</span>
+            <span className="pagination__page">{currentPage+1}</span>
             <button className="btn" 
             disabled={!isNextPageAvailable}
             onClick={goNext}>

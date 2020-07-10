@@ -10,18 +10,14 @@ class UsersList extends Component {
 
 
     goNext = () => {
-
         this.setState({
             currentPage: this.state.currentPage + 1
         })
-
     }
     goPrev = () => {
-
         this.setState({
             currentPage: this.state.currentPage - 1
         })
-
     }
 
     render() {
@@ -39,7 +35,7 @@ class UsersList extends Component {
             <div>
                 <Pagination goNext={this.goNext}
                     goPrev={this.goPrev}
-                    currentPage={currentPage + 1}
+                    currentPage={currentPage }
                     itemsPerPage={itemsPerPage}
                     totalItems={users.length} />
                 <ul className="users">
