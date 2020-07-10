@@ -24,9 +24,6 @@ class UsersList extends Component {
 
     }
 
-
-
-
     render() {
         const { users } = this.props;
         const { currentPage, itemsPerPage } = this.state;
@@ -47,7 +44,7 @@ class UsersList extends Component {
                     totalItems={users.length} />
                 <ul className="users">
                     {usersToShow.map(user => (
-                        <User key={Math.random()} name={user.name} age={user.age} />
+                        <User key={user.id} name={user.name} age={user.age} />
                     ))
                     }
                 </ul>
