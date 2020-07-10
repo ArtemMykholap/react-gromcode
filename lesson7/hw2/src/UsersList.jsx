@@ -4,7 +4,7 @@ import Pagination from './Pagination.jsx';
 
 class UsersList extends Component {
     state = {
-        currentPage: 1,
+        currentPage: 0,
         itemsPerPage: 3
     }
 
