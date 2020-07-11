@@ -15,3 +15,5 @@ const Transaction = ({ from,to,amount,rate,time }) => {
     );
 }
 export default Transaction
+
+
