@@ -1,12 +1,9 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class Login extends Component{
-    render(){
-        
+
+const Login = props => {
+    const onLogin = props.onLogin
     return (
-        <button className="login btn" >Login</button>)
-    }
+        <button className="login btn" onClick={onLogin}>Login</button>)
 }
-
 export default Login
-

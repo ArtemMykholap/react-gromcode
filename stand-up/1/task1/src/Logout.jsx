@@ -1,11 +1,8 @@
-import React, {Component} from 'react'
+import React from 'react';
 
-class Logout extends Component{
-    render(){
-        
+const Logout = props => {
+    const onLogut = props.onLogout
     return (
-        <button className="logout btn" >Logout</button>)
-    }
+        <button className="logout btn" onClick={onLogut}>Logout</button>)
 }
-
 export default Logout
