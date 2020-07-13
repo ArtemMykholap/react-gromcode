@@ -9,14 +9,14 @@ class ConnectionStatus extends Component {
     }
 
     updateOnlineStatus = (event) => {
-        const condition = navigator.onLine ? "online" : "offline";
+        const condition = window.navigator.onLine ? "online" : "offline";
 
         this.setState({
             status: condition,
         })
     }
 
-    
+
     componentDidMount(){
         window.addEventListener('online', this.updateOnlineStatus);
         window.addEventListener('offline', this.updateOnlineStatus);
