@@ -28,7 +28,7 @@ class ConnectionStatus extends Component {
         window.addEventListener('offline', this.updateOnlineStatus);
 
         const nameOfClass=`status ${this.state.status==='offline' && 'status_offline'}`;
-        return (<div className={nameOfClass}>Offline</div>)
+    return (<div className={nameOfClass}>{this.state.status}</div>)
     }
 }
 
