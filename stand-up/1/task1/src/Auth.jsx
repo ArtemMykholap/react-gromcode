@@ -45,7 +45,7 @@ class Auth extends Component {
         const {isLoggedIn, isProcessing}=this.state;
 
         if(isLoggedIn){
-            return<Logout onLogin={this.onLogin}/>
+            return<Logout onLogout={this.onLogout}/>
         }
         if (isProcessing) {
            return <Spinner size={50} />
