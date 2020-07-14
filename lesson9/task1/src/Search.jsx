@@ -18,7 +18,7 @@ handleChange=event=>{
 
 search=event=>{
     event.preventDefault();
-    alert (this.state.value);
+    alert (`Search text: ${this.state.value}`);
 }
 
 render(){
