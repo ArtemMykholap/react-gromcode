@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 
+const rootElement = document.querySelector('#root');
+
 function Square(props) {
     return (
       <button className="square" onClick={props.onClick}>
