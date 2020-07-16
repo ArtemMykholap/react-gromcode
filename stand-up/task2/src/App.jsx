@@ -8,8 +8,6 @@ import UserList from'./UserList'
 //5. test each subtask(!!!) & use debag all the time
 //6. read documentation
 
-
-
 class App extends Component {
 
    
