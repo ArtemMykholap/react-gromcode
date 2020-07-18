@@ -22,6 +22,7 @@ class Page extends Component {
     render() {
         const {userData}=this.state
         return(
+            
         <div className="page">
             <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
             <main className="content">
