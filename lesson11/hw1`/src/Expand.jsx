@@ -1,13 +1,25 @@
-import React from 'react'
-
-const Expand = ({ children, title, toggleHandler, isOpen }) => {
-    const computedClass = `fas fa-chevron-${isOpen ? 'up' : 'down'}`
+import React,{Component} from 'react';
 
 
-    return (<div className="expand border">
+
+class Expand extends Component{
+    state = {
+        isOpen: false,
+    };
+    toggleHandler = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+
+    render(){
+        const {isOpen}=this.state
+        const{children,title}=this.props
+        const computedClass = `fas fa-chevron-${isOpen ? 'up' : 'down'}`
+        return (<div className="expand border">
         <div className="expand__header">
             <span className="expand__title">{title}</span>
-            <button className="expand__toggle-btn" onClick={toggleHandler} >
+            <button className="expand__toggle-btn" onClick={this.toggleHandler} >
                 <i className={computedClass} ></i>
             </button>
         </div>
@@ -15,7 +27,10 @@ const Expand = ({ children, title, toggleHandler, isOpen }) => {
             {children}
         </div>}
     </div>)
+    }
 }
+
 export default Expand
+
 
 
