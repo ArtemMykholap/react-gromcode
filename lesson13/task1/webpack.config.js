@@ -39,7 +39,9 @@ module.exports = (env, argv) => {
       extensions: [".js", ".jsx"]
     },
     devServer: {
-      hot: true
+      hot: true,
+      port: 9007,
+      historyApiFallback: true,
     }
   };
 
