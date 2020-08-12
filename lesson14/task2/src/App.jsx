@@ -18,6 +18,7 @@ const App = () => {
                     </ul>
                     <Switch>
                         <Route path="/users/:userId" component={User} />
+                        <User/>
                         <Route path="/">
                             <span>Select a user please</span>
                         </Route>
