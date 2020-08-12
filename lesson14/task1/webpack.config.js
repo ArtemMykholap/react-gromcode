@@ -9,6 +9,7 @@ module.exports = (env, argv) => {
     entry: "./src/index.jsx",
     output: {
       filename: "bundle.js",
+      publicPath:'/',
       path: __dirname + '/review_build'
 
     },
@@ -40,6 +41,7 @@ module.exports = (env, argv) => {
     },
     devServer: {
       hot: true,
+      port:8000,
       historyApiFallback: true,
     }
   };
