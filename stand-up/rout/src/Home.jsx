@@ -5,7 +5,7 @@ class Home extends Component{
 
     render(){
         return(
-            <div class="page__content">
+            <div className="page__content">
             <h1>HOME PAGE </h1>
         </div> )
     }
