@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import tus from './tus';
+import ConnectionStatus from './ConnectionStatus';
 import './index.scss';
 
 const rootElement=document.querySelector('#root');
