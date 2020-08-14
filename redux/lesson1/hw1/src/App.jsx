@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import {userData,NameContext } from './data-context';
+import { userData, NameContext } from './data-context';
 
 
 class App extends Component {
     state = {
-        userData:userData,
+        userData: userData,
     }
- 
+
 
     render() {
         console.log(this.state.userData)
         return (
-            <div>
+            <div class="page">
                 <NameContext.Provider value={this.state.userData}>
-                    <Header/>
+                    <Header />
                 </NameContext.Provider>
-            </div>
+            </div>    
+
         )
     }
 }
