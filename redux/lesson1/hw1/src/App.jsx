@@ -5,7 +5,10 @@ import { userData, NameContext } from './data-context';
 
 class App extends Component {
     state = {
-        userData: userData,
+        userData: {
+            name: 'Nikola Tesla',
+            avatar_url: 'https://avatars3.githubusercontent.com/u10001'
+        }
     }
 
 
@@ -16,7 +19,7 @@ class App extends Component {
                 <NameContext.Provider value={this.state.userData}>
                     <Header />
                 </NameContext.Provider>
-            </div>    
+            </div>
 
         )
     }
