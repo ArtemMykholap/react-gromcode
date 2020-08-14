@@ -3,4 +3,4 @@ export const userData={
  
 }
 
-export const NameContext = React.createContext()
+export const NameContext = React.createContext(userData)
