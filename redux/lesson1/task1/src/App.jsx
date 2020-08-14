@@ -8,21 +8,14 @@ class App extends Component {
         theme: themes.light,
     }
     toggleTheme = () => {
-
         const newTheme = this.state.theme === themes.dark
             ? themes.light
             : themes.dark
-
-
         this.setState({
             theme: newTheme,
         })
 
-
     }
-
-
-
     render() {
         return (
             <div>
