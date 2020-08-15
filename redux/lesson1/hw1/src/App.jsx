@@ -29,7 +29,7 @@
 
 import React, { Component } from 'react';
 import Header from './Header';
-import { Context } from './data-context';
+import { Context } from './Context';
 
 class App extends Component  {
     state = {

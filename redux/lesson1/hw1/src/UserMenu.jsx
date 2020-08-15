@@ -17,7 +17,7 @@
 // export default UserMenu
 
 import React, { Component } from 'react';
-import { Context } from './data-context';
+import { Context } from './Context';
 
 class UserMenu extends Component {
     render() {
