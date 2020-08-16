@@ -44,6 +44,7 @@ const counterReducer=(state=intialState,action)=>{
         case RESET:
             return{
                 ...state,
+                value:0,
                 history:[]
             };
         default:
