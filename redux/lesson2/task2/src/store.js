@@ -22,12 +22,12 @@ export const reset=()=>{
     }
 }
 
-const intialState={
+export const initialState={
     value:0,
     history:[]
 }
 
-const counterReducer=(state=intialState,action)=>{
+const counterReducer=(state=initialState,action)=>{
     switch(action.type){
         case INCREMENT:
             return{
