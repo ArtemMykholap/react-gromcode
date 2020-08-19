@@ -1,45 +1,28 @@
-import React, { Component } from 'react';
+import React, {useState, useEffect } from 'react';
 
 
-class User extends Component {
-    state = {
-        avatarUrl: null,
-        userName: null,
-        userLocation: null,
-    }
-
-
-
-    componentDidMount() {
-        debugger;
-        const userId = this.props.match.params.userId;
+const User = (props) => {
+    const [userData, setUserData] = useState(null)
+    const userId = props.match.params.userName;
+    useEffect(() => {
         fetch(`https://api.github.com/users/${userId}`)
             .then(response => response.json())
             .then(userData => {
-                debugger;
-                this.setState({
-                    avatarUrl: userData.avatar_url,
-                    userName: userData.name,
-                    userLocation: userData.location,
-                })
+                setUserData(userData)
             })
+    }, [userId])
+    if(!userData){
+        return null
     }
-
-    render() {
-        debugger;
-        const userId = this.props.match.params.userId;
-        return (
-            <div className="user">
-                <img alt="User Avatar" src="https://avatars1.githubusercontent.com/u/9919?v=4" className="user__avatar" />
-                <div className="user__info">
-                    <span className="user__name">GitHub</span>
-                    <span className="user__location">San Francisco,CA</span>
-                </div>
+    const { avatar_url, name, location } = userData
+    return (
+        <div className="user">
+            <img alt="User Avatar" src={avatar_url} className="user__avatar" />
+            <div className="user__info">
+                <span className="user__name">{name}</span>
+                <span className="user__location">{location}</span>
             </div>
-
-        )
-
-    }
+        </div>
+    )
 }
-
 export default User
