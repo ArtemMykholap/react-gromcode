@@ -1,32 +1,31 @@
-import React from 'react'
-import Home from './Home';
-import Users from './Users';
-import User from './User';
 import { Link, Route, BrowserRouter, Switch } from 'react-router-dom'
+import React from 'react';
+import Home from './Home.jsx'
+import Users from './Users.jsx'
+
+
 
 const App = () => {
 
     return (
-
         <div className="page">
             <BrowserRouter>
                 <ul className="navigation">
                     <li className="navigation__item">
-                        <a href="/">Home</a></li>
-                    <li className="navigation__item"><a href="/users">Users</a></li>
+                        <Link to="/">Home
+                        </Link></li>
+                    <li className="navigation__item"><Link to="/users">Users</Link></li>
                 </ul>
                 <Switch>
-                <Route exact path="/"><Home></Home></Route>
-                <Route path="/users" component={Users}></Route>
+                    <Route exact path="/"><Home /></Route>
+                    <Route path="/users" component={Users}/>
                 </Switch>
-
-               
-
             </BrowserRouter>
-        </div >
-
+        </div>
+        
     )
+
 
 }
 
-export default App
+export default App;
