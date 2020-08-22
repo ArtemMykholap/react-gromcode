@@ -5,8 +5,9 @@ import usersReducer from './user.reducer'
 
 const appReducer = combineReducers({
     language: languageReducer,
+    user: usersReducer,
     cart: cartReducer,
-    users: usersReducer,
+
 })
 
 const store = createStore(appReducer, window.__REDUX_DEVTOOLS_EXTENSION__ &&
