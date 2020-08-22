@@ -3,7 +3,7 @@ export const DELETE_USER = 'USER/DELETE_USER';
 
 
 
-export const addUser = (userData) => {
+export const setUser = (userData) => {
     return {
         type: ADD_USER,
         payload: {
@@ -13,7 +13,7 @@ export const addUser = (userData) => {
 }
 
 
-export const deleteUser = (userId, userData) => {
+export const removeUser = (userId, userData) => {
     return {
         type: DELETE_USER,
         payload: {
