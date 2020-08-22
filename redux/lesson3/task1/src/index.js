@@ -2,12 +2,8 @@ import { increment, decrement, reset } from './counter.actions';
 import { addUser, deleteUser, updateUser } from './users.actions';
 import store from './store.js';
 
-store.subscribe(() => console.log(store.getState()))
 
-store.dispatch(increment());
-store.dispatch(decrement());
-store.dispatch(increment());
-store.dispatch(increment());
+
 //   store.dispatch(decrement());
 //   store.dispatch(decrement());
 //   store.dispatch(decrement());
