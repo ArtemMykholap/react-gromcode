@@ -2,6 +2,7 @@ import React, {useState, useEffect } from 'react';
 
 
 const User = (props) => {
+    // let { userId } = useParams();
     const [userData, setUserData] = useState(null)
     const userId = props.match.params.userName;
     useEffect(() => {

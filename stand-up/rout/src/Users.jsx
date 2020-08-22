@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import User from './User.jsx';
+import User from './User';
 import { Link, Route, BrowserRouter, Switch } from 'react-router-dom'
 
 
@@ -16,16 +16,17 @@ class Users extends Component {
                     <h1>Users</h1>
                     <ul className="navigation">
                         <li className="navigation__item">
-                            <Link to="/users/github">Github</Link>
+                            <Link to={`${match.path}/github`}>Github</Link>
                         </li>
                         <li className="navigation__item">
-                            <Link to="/users/facebook">Facebook</Link>
+                            <Link to={`${match.path}/facebook`}>Facebook</Link>
                         </li>
                     </ul>
                     <Switch>
                         <Route exact path={match.path}> <span>Select a user please</span></Route>
                         <Route path={`${match.path}/:userName`} component={User}></Route>
                     </Switch>
+
                 </div>
             </BrowserRouter>)
     }

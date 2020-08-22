@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from './Product'
-import { Link, Route, Switch,UseParams } from 'react-router-dom'
+import { Link, Route, Switch, UseParams } from 'react-router-dom'
 const Products = ({ match }) => {
 
     return (
@@ -16,9 +16,9 @@ const Products = ({ match }) => {
             </ul>
             <Switch>
                 <Route exact path={match.url}><span>Select a product please</span></Route>
-                    <Route path={`${match.url}/:productId`}>
-                        <Product/>
-                    </Route>
+                <Route path={`${match.url}/:productId`}>
+                    <Product />
+                </Route>
             </Switch>
         </div>
 

@@ -1,7 +1,8 @@
-import { Link, Route, BrowserRouter, Switch } from 'react-router-dom'
 import React from 'react';
-import Home from './Home.jsx'
-import Users from './Users.jsx'
+import { Link, Route, BrowserRouter, Switch } from 'react-router-dom'
+import Users from './Users';
+
+import Home from './Home';
 
 
 
@@ -12,17 +13,17 @@ const App = () => {
             <BrowserRouter>
                 <ul className="navigation">
                     <li className="navigation__item">
-                        <Link to="/">Home
-                        </Link></li>
-                    <li className="navigation__item"><Link to="/users">Users</Link></li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="navigation__item">
+                        <Link to="/users">Users</Link>
+                    </li>
                 </ul>
-                <Switch>
-                    <Route exact path="/"><Home /></Route>
-                    <Route path="/users" component={Users}/>
-                </Switch>
+                <Route exact path="/"><Home /></Route>
+                <Route path="/users" component={Users} />
             </BrowserRouter>
         </div>
-        
+
     )
 
 

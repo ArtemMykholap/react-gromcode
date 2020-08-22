@@ -17,7 +17,6 @@ const App = () => {
                         <Link to="/products">Products</Link>
                     </li>
                 </ul>
-
                 <Route exact path="/"> <Home /></Route>
                 <Route path="/products" component={Products}/>
             </BrowserRouter>
