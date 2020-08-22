@@ -12,12 +12,11 @@ export const addProduct = (userData) => {
 }
 
 
-export const removeProduct = (userId, userData) => {
+export const removeProduct = (userId) => {
     return {
         type: REMOVE_PRODUCT,
         payload: {
-            userId,
-            userData,
+            userId
         }
     };
 }
