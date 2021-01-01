@@ -6,7 +6,7 @@ const User = () => {
     const{userId}=useParams();
 
     useEffect(() => {
-        fetch(`https://api.github.com/users/${userId}`)
+        fetch(`http://localhost:3000/users`)
             .then(res => {
                 if (res.ok) {
                     return res.json();

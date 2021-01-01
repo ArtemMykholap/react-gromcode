@@ -41,11 +41,13 @@ module.exports = (env, argv) => {
     },
     devServer: {
       hot: true,
-      port:8000,
+      port:9000,
       historyApiFallback: true,
     }
   };
 
+
+  
   if (isProduction) {
     config.plugins.push(
       new MiniCssExtractPlugin({

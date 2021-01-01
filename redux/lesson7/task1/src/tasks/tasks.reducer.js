@@ -1,6 +1,5 @@
 import { TASKS_LIST_RECIEVED } from './tasks.actions'
 
-
 const initialState = {
     tasksList: []
 };

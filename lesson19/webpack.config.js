@@ -6,10 +6,9 @@ const webpack = require("webpack");
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
   const config = {
-    entry: "./src/index.js",
+    entry: "./src/index.jsx",
     output: {
       filename: "bundle.js",
-      publicPath:'/',
       path: __dirname + '/review_build'
 
     },
@@ -41,7 +40,6 @@ module.exports = (env, argv) => {
     },
     devServer: {
       hot: true,
-      port:9000,
       historyApiFallback: true,
     }
   };

@@ -3,40 +3,43 @@ import React, { Component } from 'react';
 
 class User extends Component {
     state = {
-        user: null
+        users: []
     }
 
 
-    componentDidMount(){
-        this.fetchUser(this.props.userId)
-      
+    componentDidMount() {
+        this.fetchUser()
+
     }
 
-    fetchUser=userId=>{
-        fetch(`https://api.github.com/users/${this.props.userId}`)
-        .then(response=>response.json())
-        .then(data=>{
-            this.setState({
-                user:data,
-            })
-        });
+    fetchUser = () => {
+        fetch(`https://api.github.com/users`)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    users: data,
+                })
+            });
     }
 
     render() {
-        if (!this.state.user) {
-            return null
-        }
-        return (
 
-            <div className="user">
-                <img alt="User Avatar"
-                    src={this.state.user.avatar_url}
-                    className="user__avatar" />
-                <div className="user__info">
-                    <span className="user__name">{this.state.user.name}</span>
-                    <span className="user__location">{this.state.user.location}</span>
-                </div>
-            </div>)
+        return (
+            <>
+                {this.state.users.map(el => {
+                    return (
+                        <div className="user">
+                            <img alt="User Avatar"
+                                src={el.avatar_url}
+                                className="user__avatar" />
+                            <div className="user__info">
+                                <span className="user__name">{el.login}</span>
+                                <span className="user__location">{el.node_id}</span>
+                            </div>
+                        </div>)
+                })}
+
+            </>)
     }
 
 }

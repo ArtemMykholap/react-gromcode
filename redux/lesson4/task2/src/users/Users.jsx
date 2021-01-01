@@ -1,57 +1,47 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as userActions from './users.actions';
+import moment from 'moment';
+export const currentDate = moment().format("YYYY-MM-DD");
+import { flightDataSelector} from './users.selector';
 
-class Users extends Component {
-    onUserCreate = () => {
-        const id = Math.round(Math.random() * 1000000);
-        const newUser = {
-            id,
-            name: `User # ${id}`,
-        };
-        this.props.addUser(newUser);
-    };
+const Users =(props)=> {
 
-    render() {
-        const { users, deleteUser } = this.props;
-        return (
-            <div className="users">
+
+
+useEffect(() => {
+
+    const computedUrl = `https://api.iev.aero/api/flights/${currentDate}`;
+    fetch(computedUrl)
+      .then((data) => data.json())
+      .then((data) => flightDataSelector(data))
+      .catch((error) => console.error(error));
+  },[])
+
+
+ return (
+         <div className="users">
                 <button
-                    onClick={this.onUserCreate}
                     className="users__create-btn"
                 >
                     Create user
                 </button>
-                <ul className="users__list">
-                    {users.map((user) => (
-                        <li key={user.id} className="users__list-item">
-                            {user.name}
-                            <button
-                                onClick={() => deleteUser(user.id)}
-                                className="users__delete-btn"
-                            >
-                                +
-                        </button>
-                        </li>
-                    ))
-                    }
-                </ul>
+              
             </div>
         );
     }
-}
+
 
 
 
 const mapState = (state) => {
     return {
-        users: state.usersList,
+        flightDataSelector: flightDataSelector(state),
     };
 };
 
 const mapDispatch = {
     addUser: userActions.addUser,
-    deleteUser: userActions.deleteUser,
 };
 
 const connector = connect(mapState, mapDispatch);
